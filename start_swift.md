@@ -95,4 +95,29 @@ var empt_arr2 = [String]()    // 둘다 같은 뜻임
 // 배열 요소 갯수 확인
 var int_arr = [1,2,3,4,5]
 print(int_arr.count) // 5출력
+
+```
+
+#### 배열의 조작
+```
+// 가장 마지막 위치에 요소 추가.
+var str_arr = ["a","b","c"]
+srt_arr.append("d")
+
+//지정한 위치에 요소 추가.
+var str_arr = ["a","b","c"]
+str_arr.insert("d", at:1) // 1번 인덱스에 d
+
+//지정한 위치의 요소 제거.
+var str_arr = ["a","b","c"]
+str_arr.remove(at:1) //1번 인덱스 요소 제거
+
+// 요소 모두 제거.
+var str_arr = ["a","b","c"]
+str_arr.removeAll()
+
+//오름차순 정렬.
+var int_arr = [4,3,1,5,2]
+var sort_arr = int_arr.sorted(by: <) // 오름 차순으로 정렬함 
+```
 ```
