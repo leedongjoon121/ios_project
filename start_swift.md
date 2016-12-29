@@ -43,10 +43,25 @@
 #### var 변수이름 : 자료형 = 값 의 형태.   
 #### 예시 
 ```
-var number:Int = 10
-let weight:Double = 1.23
-var flag:Bool = true / false
-var name = "String 타입 문자열 지정법"
+var number:Int = 10   // Integer 형태. 
+let weight:Double = 1.23  // Double 형태.
+var flag:Bool = true / false // Boolean 형태.
+var name = "String 타입 문자열 지정법" . // String 형태.
+```
+
+### 자료형 변환 
+#### 문법  : 변환할 자료형(값).
+#### 예시
+```
+let string_num = "100"  // 스트링 
+let cast_num = Int(string_num)       // Integer 타입으로 변환
+
+let number : Int = 200      //  Integer 타입
+let cast_number = Double(number)  // Double 타입으로 변환
+
+let number = 5
+let string_num :String = "문자열로 변환 합니다"+String(number)+"이런식으로요 ~"
+
 ```
 
 
