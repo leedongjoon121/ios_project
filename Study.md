@@ -66,3 +66,53 @@ var stockCode:String? = findStockCode("Facebook")
 ##### 쉽게말해, “만일 stockCode가 값을 가지고 있다면, 이것을 꺼내서 (1)tempStockCode에 값을 대입하고, 
 ##### (2) 조건문 블록을 실행하라” 는 것을 의미 한다. 그렇지 않다면 조건문은 실행되지 않는다.
 ##### tempStockCode는 새로운 상수이므로 끝에 느낌표(!)를 사용할 필요가 없다.
+
+### 옵셔널 체이닝 
+#### 옵셔널 체이닝 적용전 예시
+```
+class Stock {
+    var code: String?   // 
+    var price: Double?
+}
+func findStockCode(company: String) -> Stock? {
+    if (company == "Apple") {
+        let aapl: Stock = Stock()
+        aapl.code = "AAPL"
+        aapl.price = 90.32
+        return aapl
+    } else if (company == "Google") {
+        let goog: Stock = Stock()
+        goog.code = "GOOG"
+        goog.price = 556.36
+        return goog
+    }
+    return nil
+}
+```
+
+#### 위의 예제에서 옵셔널바인딩 적용
+  
+```
+if let stock = findStockCode("Apple") {
+    if let sharePrice = stock.price {
+        let totalCost = sharePrice * 100
+        println(totalCost)
+    }
+}
+```
+#### findStockCode()의 반환값은 옵셔널이므로, 옵셔널 바인등을 사용해 nul-체크를 하고 stock의 price 역시 옵셔널 이므로 다시 한번 if let~ 문을 사용하였다.  
+### 옵셔널 체이닝 적용 .     
+```
+if let sharePrice = findStockCode("Apple")?.price {
+    let totalCost = sharePrice * 100
+    println(totalCost)
+}
+```
+#### 설명 : 중첩된 “if set” 문을 사용하는 대신 옵셔널 체이닝을 사용해 더 간단히 할 수 있다. 
+#### 옵셔널 체인은 “?.” 오퍼레이터를 사용해 다수의 옵셔널을 체인으로 묶을 수 있다. 
+    
+    
+    
+    
+    
+    
