@@ -8,7 +8,6 @@
 #### 예시1
 <prev><code>
     var message: String = "Swift is awesome!" // OK
-    
     message = nil // 이렇게 하면 에러가 발생함!
      
 </code></prev>
