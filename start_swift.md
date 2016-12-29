@@ -64,6 +64,35 @@ let string_num :String = "문자열로 변환 합니다"+String(number)+"이런�
 
 ```
 
+### 조건문.
+#### switch
+```
+var dice  = 1
+switch dice {
+case 1: print("~~~~ 1")
+case 2,5: print("~~~~ 2 or 5")
+default : print("~~~~ 디폴트 ")
+} // break 가 필요 
+```
 
+### 배열.
+```
+var int_array = [1,2,3]
+var string_array = ["A","B","C"]
 
+// 자료형을 지정해서 배열 만들기.
+var int_array:[Int] = [1,2,3]
+var str_array:[String] = ["a","b","c"]
 
+// 같은 초기값이 있는 배열 만들기.
+var int_array = Array(repeating:0, count:3) . // 0을 3개 가진 배열 => [0,0,0]
+var str_array = Array(repeating:"A", count:3) . // A 를 3개 가진 배열 => ["A","A","A"]
+
+// 빈 배열만들기
+var empt_arr:[String] = []
+var empt_arr2 = [String]()    // 둘다 같은 뜻임
+
+// 배열 요소 갯수 확인
+var int_arr = [1,2,3,4,5]
+print(int_arr.count) // 5출력
+```
