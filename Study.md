@@ -1,7 +1,7 @@
 # ios 개념 정리 & mark down 연습 
 ## 스터디 시작일 : 2016 12. 22
 ## 작성자 : 이동준 
-### 스터디 개념 참조 : <http://chanlee.github.io/2015/06/14/Introduce-Swift-Optional/>
+##### 스터디 개념 참조 : <http://chanlee.github.io/2015/06/14/Introduce-Swift-Optional/>
 ***
 ### 옵셔널
 - Swift에서 변수를 선언할때는 기본적으로 옵셔널이 아닌(non-optional)값을 지정해야 한다.
@@ -108,8 +108,11 @@ if let sharePrice = findStockCode("Apple")?.price {
     println(totalCost)
 }
 ```
-#### 설명 : 중첩된 “if set” 문을 사용하는 대신 옵셔널 체이닝을 사용해 더 간단히 할 수 있다. 
-#### 옵셔널 체인은 “?.” 오퍼레이터를 사용해 다수의 옵셔널을 체인으로 묶을 수 있다. 
+#### 설명 
+- 중첩된 “if set” 문을 사용하는 대신 옵셔널 체이닝을 사용해 더 간단히 할 수 있다. 
+- 옵셔널 체인은 “?.” 오퍼레이터를 사용해 다수의 옵셔널을 체인으로 묶을 수 있다. 
+
+
     
     
     
