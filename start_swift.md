@@ -28,5 +28,27 @@
 #### Outlet : 현실에서 일반적으로 물건을 싸게 처분하는 곳이라는 의미, 즉 연결 통로 같은 곳, 
 
 ### 변수
-#### var 
+#### var score = 100
+#### score = 200
+
+### 상수 .
+#### let myage = 20
+
+** 상수와 변수를 만들었는데 사용하지 않으면 에러가 발생한다. **
+
+### 반복문
+#### `for index in 0 ... 5 {}` .   0~5까지 반복, index 값으로 사용
+
+### 자료형
+#### var 변수이름 : 자료형 = 값 의 형태.   
+#### 예시 
+```
+var number:Int = 10
+let weight:Double = 1.23
+var flag:Bool = true / false
+var name = "String 타입 문자열 지정법"
+```
+
+
+
 
