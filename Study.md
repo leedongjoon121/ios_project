@@ -30,3 +30,17 @@ func findStockCode(company: String) -> String? {
  ```
 #### 예시1-설명 : stockCode는 문자열 또는 nil값일 수 있다. 옵셔널 문자열인 String?은 업랩(Unwrapped)되지 않았으므로,
 #### 이것을 수정할 수 있도록 에러를 발생한다. 이렇게 컴파일시에 nil 체크를 수행함으로써 잠재적인 에러를 탐지할 수 있다는것이 옵셔널의 장점이다
+
+### optional unwrapping
+#### 예시1
+```
+ var stockCode:String? = findStockCode("Facebook")
+ let text = "Stock Code - "
+ if stockCode {.  //if문으로 nil 체크를 했다고 치는것 같음
+ let message = text + stockCode!
+ println(message)
+ }
+```
+- 스위프트에서 느낌표는 강제 언래핑(Unwrapping)을 할때 사용된다. 
+- if문으로 stockCode에 값이 있다는것을 확인했으므로, 위와 같이 옵셔널 변수에 !를 붙여 값을 꺼낼 수 있다.
+ 
