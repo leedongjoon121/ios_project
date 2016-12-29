@@ -1,5 +1,7 @@
 # ios 개념 정리 & mark down 연습 
 ## 스터디 시작일 : 2016 12. 22
+## 작성자 : 이동준 
+### 스터디 개념 참조 : <http://chanlee.github.io/2015/06/14/Introduce-Swift-Optional/>
 ***
 ### 옵셔널
 - Swift에서 변수를 선언할때는 기본적으로 옵셔널이 아닌(non-optional)값을 지정해야 한다.
