@@ -45,4 +45,22 @@ func findStockCode(company: String) -> String? {
 ```
 - 스위프트에서 느낌표는 강제 언래핑(Unwrapping)을 할때 사용된다. 
 - if문으로 stockCode에 값이 있다는것을 확인했으므로, 위와 같이 옵셔널 변수에 !를 붙여 값을 꺼낼 수 있다.
- 
+
+### optional binding
+- 옵셔널 바인딩은 옵셔널이 값을 가지고 있는지 아닌지를 체크한다.
+- 값이 있을 경우 그것을 꺼내어 임시로 특정 상수(또는 변수)에 값을 보관하는 방법을 말한다.
+
+#### 예시 
+```
+var stockCode:String? = findStockCode("Facebook")
+ let text = "Stock Code - "
+ if let tempStockCode = stockCode {
+ let message = text + tempStockCode
+ println(message)
+ }
+```
+#### 예시 설명
+#####  “if let”(또는 if var 도 사용 가능) 구문은 두가지 의미를 내포하고 있다. 
+##### 쉽게말해, “만일 stockCode가 값을 가지고 있다면, 이것을 꺼내서 (1)tempStockCode에 값을 대입하고, 
+##### (2) 조건문 블록을 실행하라” 는 것을 의미 한다. 그렇지 않다면 조건문은 실행되지 않는다.
+##### tempStockCode는 새로운 상수이므로 끝에 느낌표(!)를 사용할 필요가 없다.
