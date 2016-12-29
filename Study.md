@@ -14,3 +14,13 @@
    message = nil // 이렇게 하면 에러가 발생함!
    </code>  
 </prev>
+
+```
+var stockCode:String? = findStockCode("Facebook")
+ let text = "Stock Code - "
+ if stockCode {.  //if문으로 nil 체크를 했다고 치는것 같음
+ let message = text + stockCode!
+ println(message)
+ }
+ ```
+ 
