@@ -1,5 +1,4 @@
-# ios 개념 정리 & mark down 연습 
-## 스터디 시작일 : 2016 12. 22
+# 스위프트 옵셔널 
 ## 작성자 : 이동준 
 ##### 스터디 개념 참조 : <http://chanlee.github.io/2015/06/14/Introduce-Swift-Optional/>
 ***
