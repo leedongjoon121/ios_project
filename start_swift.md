@@ -173,3 +173,36 @@ let tuple2 = (postcode:100000, message:"튜플테스트 해보자~~") // 딕셔�
 print(tuple2.postcode) -> 100000
 print(tuple2.message) -> "튜플테스트 해보자~~"
 ```
+
+### 함수.
+
+```
+// 매개변수 처리.
+
+func hello(name:String){
+ print("안녕~~~ 문자 하나 출력해봅시다~ : \(name)")
+}
+hello(name: "동준")
+
+//반환값 처리 (매개변수 )
+func hi_Hello(name:String) -> String{
+  let message = "\(name) 입니다~~"
+  return message
+}
+let return_Value = hi_Hello(name:"동준씨")  //호출 값.
+
+
+// 반환값 처리.(매개변수 하나, 리턴값 )
+func hello2(price:Double) -> (Double,Double){
+  // 매개변수는 부동소수 자료형의 price이고, 리턴값은 부동소수 자료형 2개를 리턴한다는 의미.
+  
+  let tax = price +20
+  let tax2 = tax +50
+  return (tax,tax2)
+}
+
+let (tax,tax2) = hello2(price:300)
+print("tax는 : \(tax)입니다.") // 320
+print("tax2는 : \(tax2)입니다.") // 350
+
+```
