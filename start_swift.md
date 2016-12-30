@@ -266,4 +266,29 @@ let test_int2:Int? = Int(test_int) // Int 타입으로
 
 
 ```
-  return message
+### 클래스.
+#### 클래스 상속과 오버라이드.
+```
+
+// 스위치 색깔 바꾸는 
+import Foundation
+import UIKit
+
+class Myswitch : UISwitch{
+   
+    required init?(coder aDecoder: NSCoder){
+    // UIkit은 상속할때     required init?(coder aDecoder: NSCoder)라는 메서드가 필요하다.
+       fatalError()
+    }
+    
+    override init(frame: CGRect){ // 스위치 초기화 할때 사용되는 메서드가 init(frame: CGRect)이다.
+       super.init(frame:frame)
+        self.onTintColor = UIColor.red // 붉은 색으로 변경
+    }
+    
+    
+}
+
+let temp = Myswitch()
+temp.isOn = true
+```
