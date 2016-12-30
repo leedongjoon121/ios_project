@@ -157,5 +157,19 @@ str_dic.removeValue(forKey:"c")
 - 새로운 요소를 추가하거나 제거하는 것은 불가능 하다.
 
 ```
+let tuple1 = (1,2,3)
+let tuple2 = (100000, "튜플테스트 해보자~~")
+print(tuple2.0) -> 1000000
+print(tuple2.1) -> "튜플테스트 해보자~~~"
 
+//여러개의 데이터를 한번에 할당.
+let tuple2 = (100000, "튜플테스트 해보자~~")
+var (postcode, address) = tuple2
+print(postcode) -> 100000
+print(address) -> "튜플테스트 해보자~~"
+
+// 튜플에 이름 붙이기.
+let tuple2 = (postcode:100000, message:"튜플테스트 해보자~~") // 딕셔너리 처럼 각 요소 앖에 : 으로 구분해서 요소 이름을 붙임!!
+print(tuple2.postcode) -> 100000
+print(tuple2.message) -> "튜플테스트 해보자~~"
 ```
