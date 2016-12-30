@@ -119,5 +119,40 @@ str_arr.removeAll()
 //오름차순 정렬.
 var int_arr = [4,3,1,5,2]
 var sort_arr = int_arr.sorted(by: <) // 오름 차순으로 정렬함 
+
 ```
+### 딕셔너리.
+#### 여러개의 데이터를 다룰때 이름과 데이터를 함께 사용하고, 이름을 사용해 데이터를 읽고 쓰고 싶을때 딕셔너리 사용
+#### 사전과 같은 자료형이며,찾고싶은 데이터를 이름(키)로 검색하고 해당데이터를 읽거나 쓴다. -> 키와 요소 라고 부름.
+
 ```
+var int_dic = ["a":1, "b":2, "c":3]
+var str_dic = ["a":"가","b":"나","c":"다"]
+print(str_dic.count)   --> 3 출력
+print(str_dic["c"])   --> optional("다") 가 출력됨 
+  why?? 키에 대응하는 값이 없을수도 있다 이럴때는 nil을 반환하게 되므로 반환값이 optional이다.
+
+if let getValue = str_dic["c"] {
+ print(getValue) .   -> 다 출력됨 (값이 있다면, 출력하는 구조 이므로 optioanl이 아님)
+}
+
+//딕셔너리 출력 형태.
+var str_dic = ["a":"가","b":"나","c":"다"]
+for(key,value) in str_dic {
+  print("키값은 : ")
+}
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
