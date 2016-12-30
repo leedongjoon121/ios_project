@@ -26,7 +26,7 @@
 - 오토레이아웃은 화면의 비율이나 크기에 따라 자동으로 레이아웃을 변화시켜주는 기능이다.
 
 #### IB :  IBOutlet, IBAction의 IB는 인터페이스 빌더를 의미
-#### Outlet : 현실에서 일반적으로 물건을 싸게 처분하는 곳이라는 의미, 즉 연결 통로 같은 곳,..
+#### Outlet : 현실에서 일반적으로 물건을 싸게 처분하는 곳이라는 의미, 즉 연결 통로 같은 곳,
 
 ### 변수
 #### var score = 100
@@ -207,3 +207,63 @@ print("tax는 : \(tax)입니다.") // 320
 print("tax2는 : \(tax2)입니다.") // 350
 
 ```
+
+### optional 자료형.
+- 스위프트에는  optional 이라는 자료형이 있다. 변수 뒤에  ? 또는  !를 붙이는 것.
+- optional 자료형은 애플리케이션의 크래시를 막기 위한 안전 기능이다.
+- 데이터에는 nil 이라는 값이 없는 상태가 있다. 0이 아니라, 값이 결정되지 않은 상태를 의미한다.
+- 예를들어 사용자에게 어떤 값을 입력 받도록 요청했는데 서버가 꺼지거나 기타 오류로 인해 값이 넘어오지 않을 경우를 대비한다.
+
+#### optional 자료형 만들기 : 랩.
+- 옵셔널 자료형 변수 만들때 이름 뒤에 ? 를 붙이는데, 이러한 것을 랩 한다고 한다.
+- optional 자료형으로 만들어서 안전한 상태로 만드는 것을 
+
+```
+// optinal 자료형 변수 만들기.
+var test_int:Int? = nil
+
+var test_int1:Int? = 10
+var test_int2:Int = test_int1 // 이러면 에러임 왜냐면, 새로운 변수에도 nil이 들어갈 가능성이 있기 때문.
+var test_int2:Int? = test_int1 //따라서 이처럼 만들어야 함.
+
+
+// optional 자료형으로 랩한 변수는 계산이나 처리에 사용 하지 못한다 , 안전을 위해 optional자료형으로 포장했으므로 뜯어서 사용해야한다
+
+// 언랩해서 값을 꺼내기 -> ! 를 붙인다.
+var test_int3?Int = 10
+var answer = test_int3! + 20  // 자료형을 언랩 했기 때문에 오류 발생 안함 .
+
+// 암묵적인 언랩 자료형의 변수에 넣어서 꺼내기.
+// 암묵적인 언랩 자료형의 변수란 , 이 변수에 들어있는 값이 절대 nil이 아니라고 보장되는 변수이므로 값을 곧바로 사용할수 있다.
+
+var test_int1:Int? = 10
+var test_int2:Int! = test_int1 // 암묵적인 언랩 자료형의 변수에 값을 넣는것. ( 새로운 변수를 만들때 변수뒤에 ! 를 붙여서 만든다.)
+var answer = test_int2 +20
+
+// if let을 사용하여 꺼내기. -> 언랩을 사용하는 방법들은 조금 강제적인 방법들.
+// optional 바인딩이라고 부르는 if와 let을 함께 사용하는 것.  
+
+var test_int:Int? = 10
+if let temp = test_int {
+ print(temp)
+}     
+
+// 가드를 사용해서 값을 꺼내기.
+// 가드는 함수(메서드)에서 사용하는 것이므로, 조건을 만족하지 않으면 처리를 입구에서 곧바로 돌려보냄.
+func test_guard(_ testInt:Int?){
+   guard let temp = testInt else{ // 값이 재대로 들어있는지 확인
+    return
+   }
+   print(temp)  // 20
+}
+let testInt2:Int? = 20
+test_guard(testInt2)
+
+// 자료형 변환시에 안전하게 optional 바인딩 사용하기 .
+// 변환시에 변환 할수도 없을 수가 있기 때문에 이때는, nil 이 되므로 optional 자료형으로 만든다.
+let test_int = "100" // String 타입.
+let test_int2:Int? = Int(test_int) // Int 타입으로 
+
+
+```
+  return message
