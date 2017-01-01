@@ -25,3 +25,23 @@ class ViewController: UIViewController{
  }
 }
 ```
+### 애플리케이션에서 사파리를 띄워서 사용.-> 컨트롤러가 종료될때를 알아야 할경우.
+- SFSafariViewController가 끝날때는 SFSafariViewControllerDidFinish() 메서드가 호출.
+- 이 메서드를 사용하면 SFSafariViewController가 종료될 때 특별한 처리 가능.
+```
+import UIkit
+import SafariServices  //SafariServices 임포트.
+class ViewController: UIViewController, SFSafariViewControllerDelegate{ // SFSafariViewControllerDelegate를 통해 통지 받을 준비
+ @IBAction func tapBtn(){
+   if let url = URL(string: "http://www.apple.com/kr"){  // URL 객체 만들기.
+   let vc  = SFSafariViewController(url: url) //URL객체로 지정한 페이지를 출력하는 SFSafariViewController 객체 
+    vc.delegate = self // 통지 받을 대상을 자기 자신(뷰 )으로 설정함 
+     present(vc, animated: true, completion: nil) 
+   }
+ }
+ func SFSafariViewControllerDidFinish(_controller: SFSafariViewController){ 
+  // 메서드를 생성하여  SFSafariViewController가 닫힐때 자동 호출 되게끔 처리, 
+  print("close")
+ }
+
+```
