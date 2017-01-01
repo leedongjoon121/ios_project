@@ -1,6 +1,7 @@
 # 스위프트 
 ## 작성자 : 이동준 
 ***
+## 웹에서의 처리.
 ### 웹뷰.
 ```
 let stringURL = "http:www.google.co.kr"
@@ -45,3 +46,28 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate{ // SFSaf
  }
 
 ```
+
+### 이미지 뷰(웹에서 이미지 데이터 내려 받기)
+- 지정한 URL에서 로우(raw)데이터를 내려 받는다.
+- 로우 데이터를 애플리케이션에서 사용할 수 있는 이미지 데이터로 변환하고, 이미지 뷰에 
+
+```
+@IBOutlet weak var imageview: UIImageView! // 이미지 뷰
+     
+    @IBAction func tapLoadImage() {
+      let stringurl = "https://wikibook.github.io/swift3-textbook/sample.jpg"
+        if let url = URL(string: stringurl){ // URL을 나타내는 문자열로 URL객체를 생성.
+                if let data = NSData(contentsOf: url){ //데이터를 내려받아 로우 데이터 만들기 NSData(contentsOf: url)
+                imageview.image = UIImage(data: data as Data) // 로우 데이터를 이미지 데이터로 변환하고 이미지 뷰에 출력
+           }
+        }
+    }
+```
+
+### 웹에서 텍스트  데이터 내려 받기.
+- 웹에서 텍스트 데이터를 내려 받을 때에는 URLSession을 사용한다.
+- URLSession은 웹 서버와 통신하는 객체이다. (지정한 url의 데이터를 읽어주세요, 그리고 완료되면 알려주세요! )
+
+#### 방법1. 메서드를 만들지 않는 방법.
+
+    
