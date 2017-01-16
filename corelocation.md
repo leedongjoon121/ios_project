@@ -25,8 +25,7 @@
 * [1. Class](#ch-1)
 * [2. Protocols](#ch-2)
 * [3. 사용 방법](#ch-3)
-* [4. 버전2](#ch-4)
-* [5. Extended Types](#ch-5)
+
 
 
 
