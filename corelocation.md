@@ -25,11 +25,13 @@
 * [1. Class](#ch-1)
 * [2. Protocols](#ch-2)
 * [3. 사용 방법](#ch-3)
-* [4. Structures](#ch-4)
+* [4. 버전2](#ch-4)
 * [5. Extended Types](#ch-5)
 
 
 
+
+### 버전1
 
 ### Class <a id="ch-1"></a>
 
@@ -136,7 +138,7 @@
 
 
 
-#### 사용방법 <a id="ch-3"></a>
+### 사용방법 <a id="ch-3"></a>
 
 1. CoreLocation 프레임워크 추가.
 
@@ -269,9 +271,46 @@ CLLocationCoordinate2DMake: 위도와 경도 값을 좌표 데이터 구조 형�
 
 
 
-### 결과 화면
+8. 터치 이벤트 처리
+
+- 사용자가 맵에 직접 터치하여 마커를 남기고, 위도와 경도 값을 받아 오는 기능
+
+
+
+![사진](https://github.com/leedongjoon121/ios_project/blob/master/gesture.png?raw=true)
+
+- 주의 사항! : 액션을 정의할때 anyType이 아닌, 반드시 UlLongPressGesuter~~ 로 할것 !!
+
+![사진](https://github.com/leedongjoon121/ios_project/blob/master/addpin.png?raw=true)
+
+```swift
+@IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: self.map) // 맵뷰에서 내가 어디에 터치하는지에 대한 처리
+        // location in 이니깐, 맵뷰 안에서 내가 어디에 클릭 했는지
+        
+        let locCoord = self.map.convert(location, toCoordinateFrom:self.map) // 좌표를 얻어옴
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locCoord
+        annotation.title = "마우스 클릭해서 마커 찍기"
+        annotation.subtitle = "터치 이벤트로 마커 찍어 볼게요~~"
+        
+        print("\(locCoord.longitude), \(locCoord.latitude)")
+        touchlat.text = String(locCoord.latitude)
+        touchlng.text = String(locCoord.longitude)
+        //  self.map.removeAnnotation(map.annotations as! MKAnnotation) // 찍을때 마다 이전에 터치한거 없애고 싶을 때
+        self.map.addAnnotation(annotation)
+
+    }
+```
+
+
+
+### 결과 화면 <a id="ch-4"></a>
 
 ![사진](https://github.com/leedongjoon121/ios_project/blob/master/result.jpeg?raw=true)
+
+
 
 
 
