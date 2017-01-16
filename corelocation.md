@@ -12,9 +12,14 @@
 
 
 
->  With Core Location, you have to test and debug your app on a device. There is no support in iOS Simulator for  current exact location of the user.
-
-
+> CoreLocation 주요 기능 
+>
+> - Latitude
+> - Longitude
+> - Horizontal Accuracy
+> - Altitude
+> - Altitude Accuracy
+> - Speed
 
 ---
 
@@ -24,15 +29,12 @@
 
 * [1. Class](#ch-1)
 * [2. Protocols](#ch-2)
-* [3. 사용 방법](#ch-3)
+* [3. 사용 방법 & 예시 코드 ](#ch-3)
+* [4. 흐름도 ](#ch-4)
+* [5. 결과화면 ](#ch-5)
 
 
-
-
-
-### 버전1
-
-### Class <a id="ch-1"></a>
+### Class (Apple developer) <a id="ch-1"></a>
 
 - CLBeacon
 
@@ -137,7 +139,15 @@
 
 
 
-### 사용방법 <a id="ch-3"></a>
+### 흐름도<a id="ch-3"></a>
+
+![사진](https://github.com/leedongjoon121/ios_project/blob/master/flow.png?raw=true)
+
+
+
+
+
+### 사용방법 -> 같이 하면서 설명 하자.. <a id="ch-4"></a>
 
 1. CoreLocation 프레임워크 추가.
 
@@ -305,7 +315,7 @@ CLLocationCoordinate2DMake: 위도와 경도 값을 좌표 데이터 구조 형�
 
 
 
-### 결과 화면 <a id="ch-4"></a>
+### 결과 화면 <a id="ch-5"></a>
 
 ![사진](https://github.com/leedongjoon121/ios_project/blob/master/result.jpeg?raw=true)
 
